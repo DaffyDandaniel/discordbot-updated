@@ -42,10 +42,8 @@ client.on('message', message =>{
         client.commands.get('help').execute(message, args);
     } else if (command == 'reactionban'){
         client.commands.get('reactionban').execute(message, args, client);
-    } else if (command == 'play'){
-        client.commands.get('play').execute(message, args);
-    } else if (command == 'leave'){
-        client.commands.get('leave').execute(message, args);
+    } else if (command == 'uptime'){
+        client.commands.get('uptime').execute(message, args);
     }
 });
 
