@@ -1,3 +1,5 @@
+const ms = require('ms')
+
 module.exports = {
     name: 'uptime',
     description: "this is the uptime command",
