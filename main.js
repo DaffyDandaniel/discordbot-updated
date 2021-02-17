@@ -40,10 +40,6 @@ client.on('message', message =>{
         client.commands.get('unmute').execute(message, args);
     } else if (command == 'help'){
         client.commands.get('help').execute(message, args);
-    } else if (command == 'reactionban'){
-        client.commands.get('reactionban').execute(message, args, client);
-    } else if (command == 'uptime'){
-        client.commands.get('uptime').execute(message, args);
     }
 });
 
