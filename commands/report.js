@@ -1,3 +1,6 @@
+const { RichEmbed } = require('discord.js');
+const { stripIndents } = require("common-tags");
+
 module.exports = {
     name: 'report',
     description: "Report any users for breaking the rules",
