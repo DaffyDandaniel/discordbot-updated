@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args, client){
         if (message.deletable) message.delete();
 
-        let rMember = message.mentions.members.first() || message.guild.members.get(args[0]);
+        let rMember = message.mentions.members.first()
 
         if (!rMember){
             return message.reply("The user you attempted to mention or use in your report message does not exist.").then(m => n.delete(5000));
