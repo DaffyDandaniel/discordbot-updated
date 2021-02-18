@@ -1,4 +1,4 @@
-const { RichEmbed } = require('discord.js');
+const { embedGen } = require('discord.js');
 const { stripIndents } = require("common-tags");
 
 module.exports = {
@@ -30,7 +30,7 @@ module.exports = {
             })
         }
 
-        const embed = new RichEmbed()
+        const embed = new embedGen()
             .setTimestamp()
             .setFooter(message.guild.name, message.guild.iconURL)
             .setAuthor("Member Report", rMember.user.displayAvatarURL)
