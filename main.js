@@ -40,6 +40,8 @@ client.on('message', message =>{
         client.commands.get('unmute').execute(message, args);
     } else if (command == 'help'){
         client.commands.get('help').execute(message, args);
+    } else if (command == 'report'){
+        client.commands.get('report').execute(message, args);
     }
 });
 
