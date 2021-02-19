@@ -32,7 +32,8 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
         .setColor('GREEN')
         .setTitle('Player Report')
-        .setDescription(`A player report was sent by a member in the server. *Please Review.* \nPlease **React with the orange if you are claiming the report and/or looking into it.**\n**React with the tick and cross to indicate the report status. tick = report accepted, cross = report denied**\n\n**+ Person Reported:** ${rMember}\n**+ Reported by:** ${message.author}\n**+ Reason for report:** ${args.slice(1).join(" ")}`);
+        .setDescription(`A player report was sent by a member in the server. *Please Review.* \nPlease **React with the orange if you are claiming the report and/or looking into it.**\n**React with the tick and cross to indicate the report status. tick = report accepted, cross = report denied**\n\n**+ Person Reported:** ${rMember}\n**+ Reported by:** ${message.author}\n**+ Reason for report:** ${args.slice(1).join(" ")}`)
+        .setFooter('Player Report || ADO SMP || Instructions on reactions above');
 
         message.reply("Your report has been sent to the staff team and is being processed.")
         let msgEmbed = await rChannel.send(embed);
