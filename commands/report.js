@@ -20,7 +20,7 @@ module.exports = {
             return message.channel.send("Please provide a reason for the report!").then(m => m.delete({ timeout: 5000 }));
         }
 
-        const rChannel = message.guild.channels.cache.find(channel => channel.id === '812100946648760381');
+        const rChannel = message.guild.channels.cache.find(channel => channel.id === '812100946648760380');
 
         if (!rChannel){
             message.channel.send("The reports channel ID specified in my code is not correct! The developers have been notified of this issue.").then(m => m.delete({ timeout: 5000 }));
