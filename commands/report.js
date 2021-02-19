@@ -1,10 +1,7 @@
-const { embedGen } = require('discord.js');
-const { stripIndents } = require("common-tags");
-
 module.exports = {
     name: 'report',
     description: "Report any users for breaking the rules",
-    execute(message, args, client){
+    execute(message, args, client, Discord){
         if (message.deletable) message.delete();
 
         let rMember = message.mentions.members.first()
@@ -30,13 +27,10 @@ module.exports = {
             })
         }
 
-        const embed = new embedGen()
-            .setTimestamp()
-            .setFooter(message.guild.name, message.guild.iconURL)
-            .setAuthor("Member Report", rMember.user.displayAvatarURL)
-            .setDescription(stripIndents`**> Member reported:** ${rMember} (${rMember.id})
-            **> Reported by:** ${message.member}
-            **> Reason:** ${args.slice(1).join(" ")}`);
+        const embed = new Discord.MessageEmbed()
+        .setTitle('Player Report')
+        .setDescription(`A player report has been sent through to the admin team! Please **React with the tick if you are claiming the report and/or looking into it.**\n\n**> Person Reported:** ${rMember}\n**>Reported by:** ${message.author}\n**> Reason for report:** ${args.slice(1).join(" ")}`);
+
         return rChannel.send(embed);
     }
 }
