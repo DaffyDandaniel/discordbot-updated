@@ -31,7 +31,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
         .setTitle('Player Report')
-        .setDescription(`A player report has been sent through to the admin team! Please **React with the tick if you are claiming the report and/or looking into it.**\n\n**> Person Reported:** ${rMember}\n**>Reported by:** ${message.author}\n**> Reason for report:** ${args.slice(1).join(" ")}`);
+        .setDescription(`A player report has been sent through to the admin team! Please **React with the orange if you are claiming the report and/or looking into it.**\n**React with the tick and cross to indicate the report status. tick = report accepted, cross = report denied**\n\n**+ Person Reported:** ${rMember}\n**+ Reported by:** ${message.author}\n**> Reason for report:** ${args.slice(1).join(" ")}`);
 
         return rChannel.send(embed);
     }
