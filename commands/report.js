@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'report',
     description: "Report any users for breaking the rules",
-    execute(message, args, client){
+    async execute(message, args, client){
         if (message.deletable) message.delete();
 
         let rMember = message.mentions.members.first()
@@ -31,8 +31,13 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
         .setTitle('Player Report')
-        .setDescription(`A player report has been sent through to the admin team! Please **React with the orange if you are claiming the report and/or looking into it.**\n**React with the tick and cross to indicate the report status. tick = report accepted, cross = report denied**\n\n**+ Person Reported:** ${rMember}\n**+ Reported by:** ${message.author}\n**> Reason for report:** ${args.slice(1).join(" ")}`);
+        .setDescription(`A player report has been sent through to the admin team! Please **React with the orange if you are claiming the report and/or looking into it.**\n**React with the tick and cross to indicate the report status. tick = report accepted, cross = report denied**\n\n**+ Person Reported:** ${rMember}\n**+ Reported by:** ${message.author}\n**+ Reason for report:** ${args.slice(1).join(" ")}`);
 
-        return rChannel.send(embed);
+        message.reply("Your report has been sent to the staff team and is being processed.")
+        let msgEmbed = await rChannel.send(embed);
+        msgEmbed.react('🟠')
+        msgEmbed.react('✅')
+        msgEmbed.react('❌')
+
     }
 }
