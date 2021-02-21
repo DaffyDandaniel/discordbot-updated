@@ -1,23 +1,16 @@
+const Discord = require('discord.js');
+
 module.exports = {
     name: 'help',
-    description: "Help command",
+    description: "Help Command",
     execute(message, args){
-        message.channel.send(`
-        **__Help__**
-    **The prefix for this bot is "?".**
+        const embed = new Discord.MessageEmbed()
+        .setColor('BLUE')
+        .setTitle('Help')
+        .setDescription('**Miscellaneous:**\n?apply - Shows the application to join the ADO SMP (You require Java to apply)\n?ping - This does not show the real ping but just responds with something else instead.\n\n**Reports:**\n?report <ping user> <reason for report> - Reports the player specified for the specified reason.\n\n**Moderation:**\n?mute <ping person> - Mutes the specified member.\n?unmute <ping person> - Unmutes the specified person if muted.\n?kick <ping person> - Kicks the specified person.\n?ban <ping person> - Bans the specified person.')
+        .setFooter('ADO SMP || To contact an administrator please DM any administrators online.');
 
-    ***Commands***
-
-    *Commands for Everyone:*
-    ?apply - Shows the SMP Application form (You need JAVA minecraft to apply)
-    ?ping - Does not show the real ping, but shows a cool message instead.
-    ?report <ping the person who you want to report here> <reason for report> - Reports a player and sends a message to the admin team to review the report.
-
-    *Commands for Server Admin+*
-    ?mute <ping player here> - Mutes the pinged player if not muted.
-    ?unmute <ping player here> - Unmutes the pinged player if muted.
-    ?kick <ping player here> - Kicks the pinged player.
-    ?ban <ping player here> - Banned the pinged player.
-    `)
+        message.react('👍')
+        return message.channel.send(embed);
     }
 }
