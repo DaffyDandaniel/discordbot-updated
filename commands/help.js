@@ -12,7 +12,7 @@ module.exports = {
         .setFooter('ADO SMP || To contact an administrator please DM any administrators online.');
 
         message.react('👍')
-        MemberDM.send(embed)
+        dm.send(embed)
         return message.reply('**Please check your DMs!**');
     }
 }
