@@ -4,7 +4,7 @@ module.exports = {
     name: 'help',
     description: "Help Command",
     execute(message, args){
-        const MemberDM = message.author.id
+        let dm = message.guild.members.cache.find(member => member.id === message.author.id)
         const embed = new Discord.MessageEmbed()
         .setColor('BLUE')
         .setTitle('Help')
