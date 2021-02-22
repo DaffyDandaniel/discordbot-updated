@@ -42,6 +42,8 @@ client.on('message', message =>{
         client.commands.get('help').execute(message, args);
     } else if (command == 'report'){
         client.commands.get('report').execute(message, args, client);
+    } else if (command == 'smpstaff'){
+        client.commands.get('smpstaff').execute(message, args);
     }
 });
 
