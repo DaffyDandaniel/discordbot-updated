@@ -4,6 +4,7 @@ module.exports = {
     name: 'help',
     description: "Help Command",
     execute(message, args){
+        const MemberDM = message.author.id
         const embed = new Discord.MessageEmbed()
         .setColor('BLUE')
         .setTitle('Help')
@@ -11,6 +12,7 @@ module.exports = {
         .setFooter('ADO SMP || To contact an administrator please DM any administrators online.');
 
         message.react('👍')
-        return message.channel.send(embed);
+        MemberDM.send(embed)
+        return message.reply('**Please check your DMs!**');
     }
 }
