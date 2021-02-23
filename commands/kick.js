@@ -6,6 +6,8 @@ const denied = new Discord.MessageEmbed();
 
 const logembed = new Discord.MessageEmbed();
 
+const logchannel = message.guild.channels.cache.find(channel => channel.id === '813876800924942338')
+
 module.exports = {
     name: 'kick',
     description: "Kick Players with this command",
@@ -21,11 +23,15 @@ module.exports = {
                 success.setFooter('ADO SMP Kick System || Restricted to Server Admin+')
                 success.setTimestamp();
 
+                message.channel.send(success)
+
                 logembed.setColor('YELLOW')
                 logembed.setTitle('Command Logged || User Kick Event')
                 logembed.setDescription(`User ${message.author} sucessfully ran the kick command in channel ${message.channel}.\n\n**The command was successful.\nInfo: The user ${member} was kicked from the server.`)
                 logembed.setFooter('ADO SMP Bot Command was executed || Kick')
                 logembed.setTimestamp();
+
+                return logchannel.send(logembed);
             }else{
                 notvalid.setColor('ORANGE')
                 notvalid.setTitle('User Kick Event')
@@ -33,11 +39,15 @@ module.exports = {
                 notvalid.setFooter('ADO SMP Kick System || Restricted to Server Admin+ || ERROR')
                 notvalid.setTimestamp();
 
+                message.channel.send(notvalid)
+
                 logembed.setColor('YELLOW')
                 logembed.setTitle('Command Logged || User Kick Event')
                 logembed.setDescription(`User ${message.author} sucessfully ran the kick command in channel ${message.channel}.\n\n**The command was unsuccessful.\nError: User did not tag anyone or user tagged is not a valid user.`)
                 logembed.setFooter('ADO SMP Bot Command was executed || Kick')
                 logembed.setTimestamp();
+
+                return logchannel.send(logembed);
             }
         }else{
             denied.setColor('RED')
@@ -46,11 +56,15 @@ module.exports = {
             denied.setFooter('ADO SMP Kick System || Restricted to Server Admin+ || ERROR')
             denied.setTimestamp();
 
+            message.channel.send(denied)
+
             logembed.setColor('YELLOW')
             logembed.setTitle('Command Logged || User Kick Event')
             logembed.setDescription(`User ${message.author} attempted to run the kick command in channel ${message.channel}.\n\n**The command was unsuccessful.\nError: The user did not have the correct permissions to run the command.`)
             logembed.setFooter('ADO SMP Bot Command was executed || Kick')
             logembed.setTimestamp();
+
+            return logchannel.send(logembed);
         }
     }
 }
