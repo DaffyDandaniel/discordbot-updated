@@ -14,7 +14,7 @@ module.exports = {
         if (message.member.roles.cache.has('800465139727990794')){
             const member = message.mentions.users.first();
             if(member){
-                if (member !== message.author){
+                if (member.id !== message.author.id){
                     notvalid.setColor('ORANGE')
                     notvalid.setTitle('User Kick Event')
                     notvalid.setDescription(`You cannot kick yourself. O_O`)
@@ -32,29 +32,11 @@ module.exports = {
                     return logchannel.send(logembed);
                 }
 
-                if (member.permissions.has("KICK_MEMBERS")){
-                    notvalid.setColor('ORANGE')
-                    notvalid.setTitle('User Kick Event')
-                    notvalid.setDescription(`You cannot kick this user as they have the ability to kick members too! O_O`)
-                    notvalid.setFooter('ADO SMP Kick System || Restricted to Server Admin+ || ERROR')
-                    notvalid.setTimestamp();
-
-                    message.channel.send(notvalid)
-
-                    logembed.setColor('YELLOW')
-                    logembed.setTitle('Command Logged || User Kick Event')
-                    logembed.setDescription(`User ${message.author} sucessfully ran the kick command in channel ${message.channel}.\n\n**The command was unsuccessful.**\nInfo: The user attempted to kick someone that had the same abilities as them! O_O`)
-                    logembed.setFooter('ADO SMP Bot Command was executed || Kick')
-                    logembed.setTimestamp();
-
-                    return logchannel.send(logembed);
-                }
-
                 const memberTarget = message.guild.members.cache.get(member.id);
                 memberTarget.kick();
                 success.setColor('GREEN')
                 success.setTitle('User Kick Event')
-                success.setDescription(`The user you have specified (${member.id}) has been kicked from the server.`)
+                success.setDescription(`The user you have specified (${member.id}) has been kicked from the server.\n\n*The user wont be kicked if they have the same abilities as you!*`)
                 success.setFooter('ADO SMP Kick System || Restricted to Server Admin+')
                 success.setTimestamp();
 
