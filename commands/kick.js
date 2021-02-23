@@ -26,7 +26,7 @@ module.exports = {
 
                 logembed.setColor('YELLOW')
                 logembed.setTitle('Command Logged || User Kick Event')
-                logembed.setDescription(`User ${message.author} sucessfully ran the kick command in channel ${message.channel}.\n\n**The command was successful.\nInfo: The user ${member} was kicked from the server.`)
+                logembed.setDescription(`User ${message.author} sucessfully ran the kick command in channel ${message.channel}.\n\n**The command was successful.**\nInfo: The user ${member} was kicked from the server.`)
                 logembed.setFooter('ADO SMP Bot Command was executed || Kick')
                 logembed.setTimestamp();
 
@@ -42,7 +42,7 @@ module.exports = {
 
                 logembed.setColor('YELLOW')
                 logembed.setTitle('Command Logged || User Kick Event')
-                logembed.setDescription(`User ${message.author} sucessfully ran the kick command in channel ${message.channel}.\n\n**The command was unsuccessful.\nError: User did not tag anyone or user tagged is not a valid user.`)
+                logembed.setDescription(`User ${message.author} sucessfully ran the kick command in channel ${message.channel}.\n\n**The command was unsuccessful.**\nError: User did not tag anyone or user tagged is not a valid user.`)
                 logembed.setFooter('ADO SMP Bot Command was executed || Kick')
                 logembed.setTimestamp();
 
@@ -59,7 +59,7 @@ module.exports = {
 
             logembed.setColor('YELLOW')
             logembed.setTitle('Command Logged || User Kick Event')
-            logembed.setDescription(`User ${message.author} attempted to run the kick command in channel ${message.channel}.\n\n**The command was unsuccessful.\nError: The user did not have the correct permissions to run the command.`)
+            logembed.setDescription(`User ${message.author} attempted to run the kick command in channel ${message.channel}.\n\n**The command was unsuccessful.**\nError: The user did not have the correct permissions to run the command.`)
             logembed.setFooter('ADO SMP Bot Command was executed || Kick')
             logembed.setTimestamp();
 
