@@ -33,7 +33,8 @@ module.exports = {
         .setColor('GREEN')
         .setTitle('Player Report')
         .setDescription(`A player report was sent by a member in the server. *Please Review.* \n*Checkmark: Report Approved\nCross: Report Denied\nOrange Circle: Report claimed by an admin (React with this if no one else has reacted with it and no one is reviewing the report*\n\n**+ Person Reported:** ${rMember}\n**+ Reported by:** ${message.author}\n**+ Reason for report:** ${args.slice(1).join(" ")}`)
-        .setFooter('Player Report || ADO SMP || Instructions on reactions above');
+        .setFooter('Player Report || ADO SMP || Instructions on reactions above')
+        .setTimestamp();
 
         message.reply("Your report has been sent to the staff team and is being processed.")
         let msgEmbed = await rChannel.send(embed);
