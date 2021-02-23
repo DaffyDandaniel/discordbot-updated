@@ -14,24 +14,6 @@ module.exports = {
         if (message.member.roles.cache.has('800465139727990794')){
             const member = message.mentions.users.first();
             if(member){
-                if (member.id !== message.author.id){
-                    notvalid.setColor('ORANGE')
-                    notvalid.setTitle('User Kick Event')
-                    notvalid.setDescription(`You cannot kick yourself. O_O`)
-                    notvalid.setFooter('ADO SMP Kick System || Restricted to Server Admin+ || ERROR')
-                    notvalid.setTimestamp();
-
-                    message.channel.send(notvalid)
-
-                    logembed.setColor('YELLOW')
-                    logembed.setTitle('Command Logged || User Kick Event')
-                    logembed.setDescription(`User ${message.author} sucessfully ran the kick command in channel ${message.channel}.\n\n**The command was unsuccessful.**\nInfo: The user attempted to kick themselves. O_O`)
-                    logembed.setFooter('ADO SMP Bot Command was executed || Kick')
-                    logembed.setTimestamp();
-
-                    return logchannel.send(logembed);
-                }
-
                 const memberTarget = message.guild.members.cache.get(member.id);
                 memberTarget.kick();
                 success.setColor('GREEN')
