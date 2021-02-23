@@ -46,8 +46,10 @@ module.exports = {
                     logembed.setDescription(`User ${message.author} sucessfully ran the kick command in channel ${message.channel}.\n\n**The command was unsuccessful.**\nInfo: The user attempted to kick someone that had the same abilities as them! O_O`)
                     logembed.setFooter('ADO SMP Bot Command was executed || Kick')
                     logembed.setTimestamp();
+
+                    return logchannel.send(logembed);
                 }
-                
+
                 const memberTarget = message.guild.members.cache.get(member.id);
                 memberTarget.kick();
                 success.setColor('GREEN')
