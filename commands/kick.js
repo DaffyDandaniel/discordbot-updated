@@ -6,12 +6,11 @@ const denied = new Discord.MessageEmbed();
 
 const logembed = new Discord.MessageEmbed();
 
-const logchannel = message.guild.channels.cache.find(channel => channel.id === '813876800924942338')
-
 module.exports = {
     name: 'kick',
     description: "Kick Players with this command",
     execute(message, args){
+        const logchannel = message.guild.channels.cache.find(channel => channel.id === '813876800924942338')
         if (message.member.roles.cache.has('800465139727990794')){
             const member = message.mentions.users.first();
             if(member){
