@@ -6,6 +6,6 @@ module.exports = {
             return message.channel.send("No args!")
         }
 
-        return message.channel.send(args.length)
+        return message.channel.send(args)
     }
 }
