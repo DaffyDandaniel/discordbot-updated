@@ -54,7 +54,7 @@ module.exports = {
         .then((channel) => {
             channel.setParent(ticketcag)
 
-            channel.updateOverwirte(message.author, {
+            channel.updateOverwrite(message.author, {
                 VIEW_CHANNEL: true,
                 SEND_MESSAGES: true
             })
