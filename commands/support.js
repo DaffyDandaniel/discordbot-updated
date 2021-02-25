@@ -48,11 +48,16 @@ module.exports = {
             return logchannel.send(logembed);
         }
 
-        message.guild.channels.create('open-ticket', {
+        message.guild.channels.create(`open-${message.author.id}`, {
             type: 'text',
         })
         .then((channel) => {
             channel.setParent(ticketcag)
+
+            channel.updateOverwirte(message.author, {
+                VIEW_CHANNEL: true,
+                SEND_MESSAGES: true
+            })
         })
     }
 }
