@@ -4,8 +4,6 @@ module.exports = {
     execute(message, args, client){
         if(!args.length) return;
 
-        if(args.length !== '1') return;
-
         if(args === 'online'){
             return client.setStatus('online');
         }
