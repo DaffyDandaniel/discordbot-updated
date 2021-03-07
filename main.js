@@ -46,8 +46,6 @@ client.on('message', message =>{
         client.commands.get('smpstaff').execute(message, args);
     } else if (command == 'say'){
         client.commands.get('say').execute(message, args);
-    } else if (command == 'setstatus'){
-        client.commands.get('setstatus').execute(message, args, client)
     }
 });
 
