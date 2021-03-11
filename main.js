@@ -75,4 +75,16 @@ client.on('guildMemberAdd', guildMember => {
     return welcomechannel.send(embed);
 });
 
+client.on("messageDelete", message => {
+    const logchannel = message.guild.channels.cache.find(channel => channel.id === '819661989164744714')
+
+    const embed = new Discord.MessageEmbed()
+    .setColor('ORANGE')
+    .setTimestamp()
+    .setTitle('Message Deleted')
+    .setDescription(`A message has been deleted in the server!\n\n*Info:*\n**Deleted by:** ${message.author}\n**Deleted in:** ${message.channel}\n\n**Message:** ${message}`)
+    .setFooter('ADO SMP | Message Deleted')
+
+})
+
 client.login(process.env.token);
