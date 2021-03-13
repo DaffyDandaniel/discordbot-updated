@@ -17,7 +17,7 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('Bot Online');
-    client.user.setActivity(`ADO SMP (${prefix}help)`, { type: 'WATCHING' }).catch(console.error);
+    client.user.setActivity(`Games All Day (${prefix}help)`, { type: 'PLAYING' }).catch(console.error);
 });
 
 client.on('message', message =>{
