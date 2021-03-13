@@ -17,7 +17,7 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('Bot Online');
-    client.user.setActivity(`the server(${prefix}help)`, { type: 'WATCHING' }).catch(console.error);
+    client.user.setActivity(`the server (${prefix}help)`, { type: 'WATCHING' }).catch(console.error);
 });
 
 client.on('message', message =>{
