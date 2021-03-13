@@ -11,6 +11,6 @@ module.exports = {
         .setFooter('ADO SMP Administration Team Information')
 
         message.channel.send(embed)
-        return message.react('👍')
+        return message.react('👍');
     }
 }

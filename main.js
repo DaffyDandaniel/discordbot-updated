@@ -46,6 +46,8 @@ client.on('message', message =>{
         return client.commands.get('smpstaff').execute(message, args);
     } else if (command == 'say'){
         return client.commands.get('say').execute(message, args);
+    } else if (command == 'update'){
+        return client.commands.get('upddate').execute(message, args);
     } else {
         if (message.deletable) message.delete();
 
