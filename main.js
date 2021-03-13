@@ -27,25 +27,35 @@ client.on('message', message =>{
     const command = args.shift().toLowerCase();
 
     if(command === 'ping'){
-        client.commands.get('ping').execute(message, args);
+        return client.commands.get('ping').execute(message, args);
     } else if (command == 'apply'){
-        client.commands.get('apply').execute(message, args);
+        return client.commands.get('apply').execute(message, args);
     } else if (command == 'kick'){
-        client.commands.get('kick').execute(message, args);
+        return client.commands.get('kick').execute(message, args);
     } else if (command == 'ban'){
-        client.commands.get('ban').execute(message, args);
+        return client.commands.get('ban').execute(message, args);
     } else if (command == 'mute'){
-        client.commands.get('mute').execute(message, args);
+        return client.commands.get('mute').execute(message, args);
     } else if (command == 'unmute'){
-        client.commands.get('unmute').execute(message, args);
+        return client.commands.get('unmute').execute(message, args);
     } else if (command == 'help'){
-        client.commands.get('help').execute(message, args);
+        return client.commands.get('help').execute(message, args);
     } else if (command == 'report'){
-        client.commands.get('report').execute(message, args, client);
+        return client.commands.get('report').execute(message, args, client);
     } else if (command == 'smpstaff'){
-        client.commands.get('smpstaff').execute(message, args);
+        return client.commands.get('smpstaff').execute(message, args);
     } else if (command == 'say'){
-        client.commands.get('say').execute(message, args);
+        return client.commands.get('say').execute(message, args);
+    } else {
+        if (message.deletable) message.delete();
+
+        const ReplyEmbed = new Discord.MessageEmbed()
+        .setColor('RED')
+        .setTitle('Unknown Command')
+        .setDescription(`The command you have attempted to run (${message}) either does not exist or there was an error processing that command.\n\nIf this persists with a valid command, please contact a member of staff immediantly.`)
+        .setFooter('ADO SMP | Unknown Command Ran');
+
+        return message.channel.send(ReplyEmbed).then(m => m.delete({ timeout: 4500 }));
     }
 });
 
