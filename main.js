@@ -82,7 +82,7 @@ client.on("messageDelete", message => {
     .setColor('ORANGE')
     .setTimestamp()
     .setTitle('Message Deleted')
-    .setDescription(`A message has been deleted in the server!\n\n*Info:*\n**Deleted by:** ${message.author}\n**Deleted in:** ${message.channel}\n\n**Message:** ${message}`)
+    .setDescription(`A message has been deleted in the server!\n\n*Info:*\n**Message Author:** ${message.author}\n**Deleted in:** ${message.channel}\n\n**Message:** ${message}`)
     .setFooter('ADO SMP | Message Deleted')
 
     return logchannel.send(embed);
