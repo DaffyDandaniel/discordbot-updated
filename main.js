@@ -47,7 +47,7 @@ client.on('message', message =>{
     } else if (command == 'say'){
         return client.commands.get('say').execute(message, args);
     } else if (command == 'update'){
-        return client.commands.get('upddate').execute(message, args);
+        return client.commands.get('update').execute(message, args);
     } else {
         if (message.deletable) message.delete();
 
