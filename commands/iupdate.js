@@ -33,23 +33,23 @@ module.exports = {
         }
 
         if(Member.roles.cache.has('800465357374488628')){
-            Member.setNickname(`MOD | ${message.author.username}`)
+            Member.setNickname(`MOD | ${Member.username}`)
             return message.delete();
         }
 
         if(Member.roles.cache.has('820637264203087903')){
-            Member.setNickname(`MIT | ${message.author.username}`)
+            Member.setNickname(`MIT | ${Member.username}`)
             return message.delete();
         }
 
 
         if(Member.roles.cache.has('800468137870360636')){
-            Member.setNickname(`SB | ${message.author.username}`)
+            Member.setNickname(`SB | ${Member.username}`)
             return message.delete();
         }
 
         if(Member.roles.cache.has('800467563846696960')){
-            Member.setNickname(`MEMBER | ${message.author.username}`)
+            Member.setNickname(`MEMBER | ${Member.username}`)
             return message.delete();
         }
     }
