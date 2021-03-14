@@ -23,15 +23,23 @@ module.exports = {
         }
 
         if(message.member.roles.cache.has('800465357374488628')){
-            return message.member.setNickname(`MOD | ${message.author.username}`);
+            message.member.setNickname(`MOD | ${message.author.username}`)
+            return message.delete();
+        }
+
+        if(message.member.roles.cache.has('820637264203087903')){
+            message.member.setNickname(`MIT | ${message.author.username}`)
+            return message.delete();
         }
 
         if(message.member.roles.cache.has('800468137870360636')){
-            return message.member.setNickname(`SB | ${message.author.username}`);
+            message.member.setNickname(`SB | ${message.author.username}`)
+            return message.delete();
         }
 
         if(message.member.roles.cache.has('800467563846696960')){
-            return message.member.setNickname(`MEMBER | ${message.author.username}`);
+            message.member.setNickname(`MEMBER | ${message.author.username}`)
+            return message.delete();
         }
     }
 }

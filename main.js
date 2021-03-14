@@ -17,7 +17,7 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('Bot Online');
-    client.user.setActivity(`the server (${prefix}help)`, { type: 'WATCHING' }).catch(console.error);
+    client.user.setActivity(`${prefix}help`, { type: 'PLAYING' }).catch(console.error);
 });
 
 client.on('message', message =>{
@@ -48,6 +48,8 @@ client.on('message', message =>{
         return client.commands.get('say').execute(message, args);
     } else if (command == 'update'){
         return client.commands.get('update').execute(message, args);
+    } else if (command == 'iupdate'){
+        return client.commands.get('iupdate').execute(message, args);
     } else {
         if (message.deletable) message.delete();
 
