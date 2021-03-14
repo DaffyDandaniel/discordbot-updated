@@ -4,11 +4,9 @@ module.exports = {
     execute(message, args){
         let Member = message.mentions.members.first()
 
-        if(Member.roles.cache.has('800465139727990794')){
-            console.log('authorized')
-        } else {
+        if(!message.member.roles.cache.has('800465139727990794')){
             return message.channel.send('*You do not have permission to run this command!*')
-        }
+        } 
 
         if(!Member){
             return message.channel.send('`The user you specified does not exist or you did not ping anyone to update.`')
