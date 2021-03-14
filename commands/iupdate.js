@@ -4,7 +4,9 @@ module.exports = {
     execute(message, args){
         let Member = message.mentions.members.first()
 
-        if(!Member.roles.cache.has('800465139727990794')){
+        if(Member.roles.cache.has('800465139727990794')){
+            console.log('authorized')
+        } else {
             return message.channel.send('*You do not have permission to run this command!*')
         }
 
