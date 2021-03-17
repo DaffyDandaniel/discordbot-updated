@@ -91,6 +91,7 @@ client.on('guildMemberAdd', guildMember => {
 });
 
 client.on("messageDelete", message => {
+    if (message.author.id === '807936645377949706') return;
     const logchannel = message.guild.channels.cache.find(channel => channel.id === '819661989164744714')
 
     const embed = new Discord.MessageEmbed()
