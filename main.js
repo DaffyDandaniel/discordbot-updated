@@ -50,7 +50,7 @@ client.on('message', message =>{
         return client.commands.get('update').execute(message, args);
     } else if (command == 'iupdate'){
         return client.commands.get('iupdate').execute(message, args);
-    } else if (command == ''){
+    } else if (command !== ''){
         if (message.deletable) message.delete();
 
         const ReplyEmbed = new Discord.MessageEmbed()
