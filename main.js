@@ -51,6 +51,7 @@ client.on('message', message =>{
     } else if (command == 'iupdate'){
         return client.commands.get('iupdate').execute(message, args);
     } else if (command !== ''){
+        if (command.includes('?')) return;
         if (message.deletable) message.delete();
 
         const ReplyEmbed = new Discord.MessageEmbed()
