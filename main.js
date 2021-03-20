@@ -80,6 +80,7 @@ client.on('guildMemberAdd', guildMember => {
     guildMember.roles.add(welcomerole2)
     guildMember.roles.add(welcomerole3)
     guildMember.roles.add(welcomerole4)
+    guildMember.setNickname(`MEMBER | ${GuildMember.username}`)
 
     embed.setColor('ORANGE')
     embed.setTimestamp()
