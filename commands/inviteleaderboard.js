@@ -16,7 +16,7 @@ module.exports = {
                 Counter[name] = (Counter[name] || 0) + uses
             })
 
-            let reply = 'Top 3 Inviters on the ADO SMP:'
+            let reply = 'Top 3 Inviters on the ADO SMP:\n'
 
             const sort = Object.keys(Counter).sort(
                 (a, b) => Counter[b] - Counter[a]
@@ -26,7 +26,7 @@ module.exports = {
 
             for (const invite of sort) {
                 const count = Counter[invite]
-                reply += `/n/n${invite}: ${count} member(s)`
+                reply += `\n${invite}: ${count} member(s)`
             }
 
             return message.channel.send(reply);
