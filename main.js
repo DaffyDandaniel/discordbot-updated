@@ -50,6 +50,8 @@ client.on('message', message =>{
         return client.commands.get('update').execute(message, args);
     } else if (command == 'iupdate'){
         return client.commands.get('iupdate').execute(message, args);
+    } else if (command == 'inviteleaderboard'){
+        return client.commands.get('inviteleaderboard').execute(message, args);
     } else if (command !== ''){
         if (command.includes('?')) return;
         if (message.deletable) message.delete();
