@@ -17,7 +17,7 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('Bot Online');
-    client.user.setActivity(`${prefix}help`, { type: 'PLAYING' }).catch(console.error);
+    client.user.setActivity(`${prefix}help`, { type: 'STREAMING', url: "https://www.twitch.tv/discordmodmail" }).catch(console.error);
 });
 
 client.on('message', message =>{
