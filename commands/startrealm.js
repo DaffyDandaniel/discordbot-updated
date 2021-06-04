@@ -6,8 +6,8 @@ module.exports = {
 
         const filter = (m) => m.author.id === message.author.id;
 
-        message.channel.reply('\n\nAre you sure you would like to do this?\n(yes/no)')
-        message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time']}).then((collected) => {
+        message.channel.reply('\n\nAre you sure you would like to do this?\n\n(yes/no)\n\n*You have 2 minutes to respond.*')
+        message.channel.awaitMessages(filter, { max: 1, time: 120, errors: ['time']}).then((collected) => {
             const msg = collected.first();
 
             if (msg === 'yes'){
