@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var noblox = require('noblox.js')
-const config = require('../rankingconfig.json')
+const config = require('./rankingconfig.json')
 
 const prefix = '?';
 
@@ -62,4 +62,4 @@ client.on("messageDelete", message => {
     return logchannel.send(embed);
 })
 
-client.login(process.env.token);
+client.login('ODA3OTM2NjQ1Mzc3OTQ5NzA2.YB_Pog.slMPm0S5Ias44uY2cWkceeHJ_Z8');
