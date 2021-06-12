@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+require('discord-buttons')(client)
 var noblox = require('noblox.js')
 const config = require('./rankingconfig.json')
 
@@ -60,6 +61,14 @@ client.on("messageDelete", message => {
     .setFooter('T&LSCP | Message Deleted')
 
     return logchannel.send(embed);
+})
+
+client.on("clickButton", async (button) => {
+    if (button.id === 'Yes'){
+        button.channel.reply('Thanks for confirming!')
+    } else if (button.id == 'No'){
+        button.channel.reply('Sorry to hear you entered the wrong username. Run the command again to correct it. Thanks for confirming!')
+    }
 })
 
 client.login('ODA3OTM2NjQ1Mzc3OTQ5NzA2.YB_Pog.slMPm0S5Ias44uY2cWkceeHJ_Z8');
