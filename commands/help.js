@@ -11,7 +11,7 @@ module.exports = {
         .setDescription('**Miscellaneous:**\n?update - Updates your nickname to the correct nickname. (DOES NOT WORK FOR SERVER ADMIN+)\n?apply - Shows the application to join the ADO SMP (You require Java to apply)\n?ping - This does not show the real ping but just responds with something else instead.\n?smpstaff - Shows the staff team for the ADO SMP\n?say <message> - The bot will say anything you want.\n\n**Reports:**\n?report <ping user> <reason for report> - Reports the player specified for the specified reason.\n\n**Moderation:**\n?mute <ping person> - Mutes the specified member.\n?unmute <ping person> - Unmutes the specified person if muted.\n?kick <ping person> - Kicks the specified person.\n?ban <ping person> - Bans the specified person.')
         .setFooter('ADO SMP || To contact an administrator please DM any administrators online.');
 
-        message.react('👍')
+        message.react('✅')
         dm.send(embed)
         return message.reply('**Please check your DMs!**');
     }

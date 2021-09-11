@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 require('discord-buttons')(client)
-var noblox = require('noblox.js')
 const config = require('./rankingconfig.json')
+const message = "hello"
 
 const prefix = '?';
 
@@ -19,8 +19,16 @@ for(const file of commandFiles){
 
 
 client.once('ready', () => {
-    console.log('Bot Online');
-    client.user.setActivity(`My owner Test me.`, { type: 'Watching'}).catch(console.error);
+    console.log('Successful startup, BOT ONLINE');
+    client.user.setActivity(`testing`, { type: 'PLAYING'}).catch(console.error);
+    client.channels.cache.get("555945877483814915").send(`${message}`)
+
+    // const msg = client.channels.cache.get("555945877483814915").messages.fetch('121212121212112')
+    // .then(() => {
+    //     setInterval(function() {
+    //         msg.edit(`${message}`)
+    //     })
+    // })
 });
 
 client.on('message', message =>{
@@ -31,8 +39,8 @@ client.on('message', message =>{
 
     if(command === 'help'){
         return client.commands.get('help').execute(message, args);
-    } else if (command == 'setrank'){
-        return client.commands.get('setrank').execute(message, args, config)
+    } else if (command == 'suggest'){
+        return client.commands.get('suggest').execute(message, args)
     } else if (command !== ''){
         return;
         if (command.includes('?')) return;
@@ -65,10 +73,11 @@ client.on("messageDelete", message => {
 
 client.on("clickButton", async (button) => {
     if (button.id === 'Yes'){
-        button.channel.reply('Thanks for confirming!')
+        button.channel.send('Thanks for confirming!')
+        return button.defer();
     } else if (button.id == 'No'){
-        button.channel.reply('Sorry to hear you entered the wrong username. Run the command again to correct it. Thanks for confirming!')
+        button.channel.send('Sorry to hear you entered the wrong username. Run the command again to correct it. Thanks for confirming!')
     }
 })
 
-client.login('ODA3OTM2NjQ1Mzc3OTQ5NzA2.YB_Pog.slMPm0S5Ias44uY2cWkceeHJ_Z8');
+client.login(process.env.token); // ODA3OTM2NjQ1Mzc3OTQ5NzA2.YB_Pog.slMPm0S5Ias44uY2cWkceeHJ_Z8
