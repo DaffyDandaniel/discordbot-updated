@@ -81,4 +81,4 @@ client.on("clickButton", async (button) => {
     }
 })
 
-client.login(process.env['TOKEN']); // ODA3OTM2NjQ1Mzc3OTQ5NzA2.YB_Pog.slMPm0S5Ias44uY2cWkceeHJ_Z8
+client.login(process.env['TOKEN']);
