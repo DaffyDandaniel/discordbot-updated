@@ -3,6 +3,7 @@ const client = new Discord.Client();
 require('discord-buttons')(client)
 const config = require('./rankingconfig.json')
 const message = "hello"
+const noblox = require('noblox.js')
 
 const prefix = '?';
 
@@ -21,7 +22,7 @@ for(const file of commandFiles){
 client.once('ready', () => {
     console.log('Successful startup, BOT ONLINE');
     client.user.setActivity(`testing`, { type: 'PLAYING'}).catch(console.error);
-    client.channels.cache.get("555945877483814915").send(`${message}`)
+    // client.channels.cache.get("555945877483814915").send(`${message}`)
 
     // const msg = client.channels.cache.get("555945877483814915").messages.fetch('121212121212112')
     // .then(() => {
@@ -80,4 +81,4 @@ client.on("clickButton", async (button) => {
     }
 })
 
-client.login(process.env.token); // ODA3OTM2NjQ1Mzc3OTQ5NzA2.YB_Pog.slMPm0S5Ias44uY2cWkceeHJ_Z8
+client.login(process.env['TOKEN']); // ODA3OTM2NjQ1Mzc3OTQ5NzA2.YB_Pog.slMPm0S5Ias44uY2cWkceeHJ_Z8
