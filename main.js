@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 require('discord-buttons')(client)
-const config = require('./rankingconfig.json')
-const message = "hello"
 const noblox = require('noblox.js')
+const message = "hello"
+const cookie = process.env['TOKEN']
 
 const prefix = '?';
 
@@ -22,6 +22,7 @@ for(const file of commandFiles){
 client.once('ready', () => {
     console.log('Successful startup, BOT ONLINE');
     client.user.setActivity(`testing`, { type: 'PLAYING'}).catch(console.error);
+    await noblox.setCookie(cookie)
     // client.channels.cache.get("555945877483814915").send(`${message}`)
 
     // const msg = client.channels.cache.get("555945877483814915").messages.fetch('121212121212112')
@@ -42,9 +43,10 @@ client.on('message', message =>{
         return client.commands.get('help').execute(message, args);
     } else if (command == 'suggest'){
         return client.commands.get('suggest').execute(message, args)
+    } else if (command == 'rank'){
+        return client.commands.get('rank').execute(message, args, noblox)
     } else if (command !== ''){
-        return;
-        if (command.includes('?')) return;
+        if (command.includes(prefix)) return;
         if (message.deletable) message.delete();
 
         const ReplyEmbed = new Discord.MessageEmbed()
