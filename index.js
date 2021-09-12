@@ -19,7 +19,7 @@ for(const file of commandFiles){
 }
 
 
-client.once('ready', () => {
+client.once('ready', () => async {
     console.log('Successful startup, BOT ONLINE');
     client.user.setActivity(`testing`, { type: 'PLAYING'}).catch(console.error);
     await noblox.setCookie(cookie)
